@@ -1,0 +1,18 @@
+# This code segregates the frames to their respective word
+# For eg, if "again" is spoken in bbaf4a @ frames 40-54, they will be stored(symlinked) in again/bbaf4a/
+# run align_database
+# run cmd.sh in datasets folder like
+# sh cmd.sh > /dev/null
+# dev/null somehow fastens the process 10 times
+
+all with > /dev/null
+run align_database.py
+run align_cmd.sh
+run dirs_create.py
+run dirs_create.sh
+run keyframe.py
+run keyframe_cmds.sh
+
+
+
+
