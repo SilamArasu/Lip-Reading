@@ -13,7 +13,7 @@ run dirs_create.py
 run dirs_create.sh
 run keyframe.py argument NOT keyframe_bckp1.py
 run keyframe_cmds.sh
-run training.py start end 
+run train.py start end 
 run loading_data
 
 
