@@ -36,8 +36,9 @@ mapping = "/home/arasu/FYP/code/sample/mapping"
 er = ""
 cmd = ""
 
-# ,'again','bin','blue','a','two','one','red','i'
+# 'place','again','bin','blue','a','two','one','red','i'
 word_list = ['place']
+# place, red
 # path = each video folder - bbaf2n folder
 
 # Copies the frames to respective folder
@@ -87,7 +88,7 @@ def func(path):
         
 for path1 in glob.glob(os.path.join(datasets, '*')):    
     for path2 in glob.glob(os.path.join(path1, '*')): 
-        if len(os.listdir(path2)) == 0:
+        if len(os.listdir(path2)) < 75:
             continue
       #  print(path2)
         cmd += func(path2)   
