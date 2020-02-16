@@ -96,7 +96,7 @@ def dif_util(path):
       key_pics = list(set(key_pics))
     else:
       key_pics = [ x for x in sorted(os.listdir(path)) ]
-    
+    return key_pics
     cmds = ""
     for i in range(len(key_pics)):
          cmds += 'cp "{}" "{}"'.format( os.path.join(path,key_pics[i]+'.png'), os.path.join(dest1,key_pics[i]+'.png')) + '\n'
@@ -105,19 +105,12 @@ def dif_util(path):
 
 er = ""
 
-entry1 = 'again'
-print("Your folder is ",entry1)
-obj2 = glob.glob(os.path.join(mapping_path, entry1, '*')) 
-cmds = "" 
-cmd1 = None
-for entry2 in obj2 :
-   try:
-        cmd1 = None
-        # print("Now processing ",os.path.join(mapping_path, entry1, entry2))
-        cmd1 = dif_util(os.path.join(mapping_path, entry1, entry2))
-        # check_dup(cmds, cmd1)
-        cmds += cmd1
-        # input()
-   except Exception as e:
-        er += str(e) + '\n'
+path = 'absolute path to folder'
+print("Your folder is ",path)
+
+original = sorted(os.listdir(path)))
+
+keyframes = dif_util(path)
+to_be_deleted = [item for item in original if item not in keyframes]
+
             
